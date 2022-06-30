@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -11,7 +10,7 @@ function App() {
         setProducts(res.data);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.message);
       });
   }, []);
   return (
