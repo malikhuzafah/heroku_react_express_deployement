@@ -3,7 +3,6 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-var cors = require("cors");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -15,8 +14,6 @@ app.use(express.static(path.join(__dirname, "client/build")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "client/build/index.html"));
 });
-
-app.use(cors());
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
